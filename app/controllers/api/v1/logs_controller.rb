@@ -1,18 +1,13 @@
 class Api::V1::LogsController < ApplicationController
 
-  def index
-    @coolers = Cooler.all
-    render json: @coolers, status: 200
-  end
-
   def create
-    @cooler = Cooler.create(cooler_params)
-    render json: @cooler, status: 201
+    @log = Log.create(log_params)
+    render json: @log, status: 201
   end
 
   private
   def cooler_params
-    params.permit(:user_id)
+    params.permit(:content)
   end
 
 end
