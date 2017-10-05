@@ -6,8 +6,8 @@ class Api::V1::LogsController < ApplicationController
   end
 
   private
-  def cooler_params
-    params.permit(:content)
+  def log_params
+    params.permit(:beer_id,:cooler_id, :comment, :rating, :date, :location)
   end
 
 end
